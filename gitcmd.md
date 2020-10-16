@@ -1,5 +1,6 @@
-# Git: basics, commands, tips & tricks
+# Git: basics, commands & tricks
 
+<br>
 ## Why is Git so important?
 The most important function of Git is to allow teams to add (and merge) code at the same time to the same project. There are also many other things Git does really well: it allows us to revert changes, create new branches for adding new features, resolve merge conflict etc.
 Basics

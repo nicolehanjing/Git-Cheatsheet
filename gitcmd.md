@@ -12,6 +12,7 @@ Git works like this:
 
 ### Two basic rules when using Git:
 > Rule 1: Create a Git repository for every new project
+>
 > Rule 2: Create a new branch for every new feature
 
 

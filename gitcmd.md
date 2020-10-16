@@ -65,14 +65,16 @@ To create a new branch and switch to it at the same time, you can run the comman
 ```
 git checkout -b branch_name
 ```
+
 This is short for:
 ```
-// create a new branch
+# create a new branch
 git branch branch_name
 
-// switch from one branch to another
+# switch from one branch to another
 git checkout branch_name
 ```
+
 <br>
 #### Git branch
 To list all the branches and see on what branch you currently are:

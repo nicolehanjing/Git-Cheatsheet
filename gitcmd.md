@@ -87,7 +87,7 @@ This command will list the version history for the current branch:
 ```
 git log
 
-// search in code
+# search in code
 git log -S "window.alert"
 ```
 <br>
@@ -167,10 +167,10 @@ git diff
 #### Git push
 This command sends the committed changes to the remote repository:
 ```
-// push a local branch for the first time
+# push a local branch for the first time
 git push --set-upstream origin <branch>
 
-// use the -f option flag to force it
+# use the -f option flag to force it
 git push -f orgin <branch>
 ```
 <br>
@@ -178,7 +178,7 @@ git push -f orgin <branch>
 Fetch changes from upstream:
 ```
 git fetch upstream
-// fetch changes from both origin and upstream in the same shot:
+# fetch changes from both origin and upstream in the same shot:
 git fetch --multiple origin upstream
 ``` 
 <br>

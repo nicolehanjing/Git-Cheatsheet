@@ -2,9 +2,12 @@
 
 <br>
 
-## Why is Git so important?
+## Git basics
 The most important function of Git is to allow teams to add (and merge) code at the same time to the same project. There are also many other things Git does really well: it allows us to revert changes, create new branches for adding new features, resolve merge conflict etc.
 Basics
+
+<br>
+
 Git works like this: 
 - Git stores project in a repository. 
 - Commits are made to the project and they tell Git that you are satisfied with the new or changed code you created. 
@@ -17,12 +20,16 @@ Git works like this:
 >
 > Rule 2: Create a new branch for every new feature
 
+<br>
 
 ## An overview of my day-to-day workflow with Git
 If you don’t already have Git on your computer, you can go to [Git official guide](https://git-scm.com/) and follow the instructions. 
 Run git help to print a list of the most common commands.
 
 There are lots of Git commands but you will not use all of them. Here are some common commands that I use pretty much every day:
+
+<br>
+
 ### 1. Initial setup
 #### Initialize a new Git repository: Git init
 Everything you code is tracked in the repository. To create an empty git repo or reinitialize an existing one:
@@ -204,6 +211,7 @@ Delete a remote branch on origin:
 git push origin --delete <remote_branchname>
 ```
 
+<br>
 
 ## Tips & Tricks
 Here I post some of my favorite git commands and tricks that I use almost daily. I believe most of them are well known, but if you happen to not know to any of those, they are really cool and can help to make your revision-control experience more useful and powerful.

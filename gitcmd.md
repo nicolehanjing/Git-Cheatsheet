@@ -332,6 +332,7 @@ git stash apply stash@{3}
 ```
 
 <br>
+
 ### 10. Print out a cool visualization of your log
 This is pretty cool! To visualize all of your long-standing branches:
 ```
@@ -344,6 +345,7 @@ git reset --hard ID
 
 <br>
 <br>
+
 ## Reference
 [Pro git book](https://git-scm.com/book/en/v2)
 There is an online book about git, authored by Scott Chacon and Ben Straub, which is, in my opinion, far better than the official git documentation. When I need to refresh or learn some git concept, I always go there by default.

@@ -8,7 +8,7 @@ Basics
 
 <br>
 
-Git works like this: 
+**Git works like this:**
 - Git stores project in a repository. 
 - Commits are made to the project and they tell Git that you are satisfied with the new or changed code you created. 
 - New code/changes are committed on branches. Most of the work is committed on other branches and then merged with master branch. All this is stored in the same directory as the project but in a sub-folder called .git. 

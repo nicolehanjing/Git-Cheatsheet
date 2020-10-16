@@ -21,8 +21,9 @@ Git works like this:
 > Rule 2: Create a new branch for every new feature
 
 <br>
+<br>
 
-## An overview of my day-to-day workflow with Git
+## My day-to-day workflow with Git
 If you don’t already have Git on your computer, you can go to [Git official guide](https://git-scm.com/) and follow the instructions. 
 Run git help to print a list of the most common commands.
 
@@ -56,7 +57,7 @@ git remote add upstream https://github.com/<upstream_username>/<repo_name>.git
 git fetch upstream
 ```
 
-
+<br>
 #### 2. Working with branches
 To create a new branch and switch to it at the same time, you can run the command with the -b switch:
 ```
@@ -70,13 +71,13 @@ git branch branch_name
 // switch from one branch to another
 git checkout branch_name
 ```
-
+<br>
 #### Git branch
 To list all the branches and see on what branch you currently are:
 ```
 git branch
 ```
-
+<br>
 ### Git log
 This command will list the version history for the current branch:
 ```
@@ -85,9 +86,9 @@ git log
 // search in code
 git log -S "window.alert"
 ```
-
+<br>
 ### 3. Every-day workflow
-Git add
+#### Git add
 This command adds one or all changed files to the staging area.
 To just add a specific file to staging:
 ```
@@ -111,8 +112,8 @@ Maybe you accidentally staged some files that you don't want to commit.
 git restore helloworld.go
 git restore .
 ```
-
-### Git commit
+<br>
+#### Git commit
 This command records the file in the version history. The -m means that a commit message follows. This message is a custom one and you should use it to let your colleagues or yourself sometime in the future know what was added in that commit.
 ```
 git commit -m "your text"
@@ -126,6 +127,7 @@ To add empty commit (to trigger something maybe):
 ```
 git commit --allow-empty -m “Trigger notification”
 ```
+<br>
 #### Undo commits
 The following command will undo your most recent commit and put those changes back into staging, so you don't lose any work:
 ```
@@ -135,7 +137,7 @@ The next one will completely delete the commit and throw away any changes:
 ```
 git reset --hard HEAD~1
 ```
-
+<br>
 #### Squash commits
 If you have 3 commits, but you haven't pushed anything yet and you want to put everything into one commit so your boss doesn't have to read a bunch of garbage during code review.
 ```
@@ -143,6 +145,7 @@ git rebase -i HEAD~3
 ```
 An interactive text file is displayed. You'll see the word "pick" to the left of each commit. Leave the one at the top alone and replace all the others with "s" for squash, save and close the file. This will display another interactive window where you can update your commit messages into one new commit message. 
 
+<br>
 #### Git status
 This command will list files in green or red colors. Green files have been added to the stage but not committed yet. Files marked as red are the ones not yet added to the stage.
 ```
@@ -154,6 +157,8 @@ Unstaged changes since last commit
 git diff
 ```
 
+<br>
+<br>
 ### 4. Push & Pull
 #### Git push
 This command sends the committed changes to the remote repository:
@@ -164,7 +169,7 @@ git push --set-upstream origin <branch>
 // use the -f option flag to force it
 git push -f orgin <branch>
 ```
-
+<br>
 #### Fetch changes
 Fetch changes from upstream:
 ```
@@ -172,7 +177,7 @@ git fetch upstream
 // fetch changes from both origin and upstream in the same shot:
 git fetch --multiple origin upstream
 ``` 
-
+<br>
 #### Rebase
 I haven't used merge command for a long time. It has created merge bubbles that have overwritten my or other's code. I would prefer to use rebasing.
 Rebasing is a way of rewriting history. In place of merge, what this does is stacks your commits on top of commits that are already pushed up. In this case, you want to stack your commits on top of origin/feature_x:
@@ -194,42 +199,46 @@ git rebase -i HEAD~1
 ```
 Now, you can replace "pick" with "r" and just change the commit message.
 
+<br>
 #### Git pull
 Pulling is just doing a fetch followed by a merge. If you know your branch is clean (e.g., master branch), go ahead and get the latest changes. There will be no merge conflicts as long as your branch is clean.
 ```
 git pull origin/feature_x
 ```
 
+<br>
+<br>
 ### 5. Delete branches
-Delete local branch:
+#### Delete local branch
 ```
 git branch -d <local_branchname>
 ```
 Use the -D option flag to force it.
-Delete a remote branch on origin:
+#### Delete a remote branch on origin:
 ```
 git push origin --delete <remote_branchname>
 ```
 
 <br>
+<br>
 
 ## Tips & Tricks
 Here I post some of my favorite git commands and tricks that I use almost daily. I believe most of them are well known, but if you happen to not know to any of those, they are really cool and can help to make your revision-control experience more useful and powerful.
-#### 1. Throw away all you uncommitted changes
+### 1. Throw away all you uncommitted changes
 Just as it says, this command will throw away all your uncommitted changes:
 ```
 git reset --hard HEAD
 ```
-
-#### 2. Remove a file from git without removing it from the computer
+<br>
+### 2. Remove a file from git without removing it from the computer
 Sometimes using “git add” command you might end up adding files that you didn’t want to add.
 If you are not careful during a “git add”, you may end up adding files that you didn’t want to commit. You should remove the staged version of the file, and then add the file to .gitignore to avoid making the same mistake a second time:
 ```
 git reset file_name
 echo filename >> .gitignore
 ```
-
-#### 3. Format all the commits
+<br>
+### 3. Format all the commits
 Formating all the commits on just one line is really nice and usually you will prefer this than the longer format:
 ```
 git log --oneline
@@ -240,7 +249,8 @@ Maybe is not that useful after all, but I like to keep the number small since I 
 git log n
 ```
 
-#### 4. Cherry-pick a commit to your current branch
+<br>
+### 4. Cherry-pick a commit to your current branch
 Cherry pick is one of the coolest weapons you have when you mess up things and start adding commits to the wrong branch. It applies the single changes from a commit to your current branch.
 So let's say you are working on branch B and then you checkout to branch A to fix something. You add a commit to branch A and push. Then you forget to checkout to the previous branch B and add another commit for branch B.
 Now you should do git log and copy the commit hash "b3243adsa8". You checkout to bran B and do:
@@ -249,7 +259,8 @@ git cherry-pick b3243adsa8
 ```
 And boom: now your branch gets that commit. Copy/paste at is finest.
 
-#### 5. Checkout a single file from another branch
+<br>
+### 5. Checkout a single file from another branch
 If you destroy a file and just wish you could have a fresh start, or need the changes you made in one file in another branch, this command lets you grab just one file from another branch:
 ```
 git checkout some-other-branch -- hello.go
@@ -260,14 +271,15 @@ git checkout 9123284712 -- hello.go
 ```
 This is an effective trick if cherry-pick would pick up other files that you don't need.
 
-#### 6. Get rid of all untracked changes
+<br>
+### 6. Get rid of all untracked changes
 If you create a new file that didn't previously exist in the git history, you've made an untracked change. To start tracking that file, you'd need to commit it to the repo
 Sometimes, you change your mind halfway through a commit and really just want to start over without all the changes you've got. Well, git checkout . will get rid of all the tracked changes you've made, but your untracked changes will still be floating around. To remedy that, we've got git clean.
 ```
 git clean -f -d
 ```
-
-#### 7. Your ~/.gitconfig file
+<br>
+### 7. Your ~/.gitconfig file
 The first time you tried to use the git command to commit a change to a repository, you might have been greeted with something like this:
 ```
 *** Please tell me who you are.
@@ -288,14 +300,16 @@ Or you can use the git config alias command:
 git config --global alias.st status 
 ```
 
-#### 8. See staged differences
+<br>
+### 8. See staged differences
 The git diff command shows you the difference between the last commit and the state of the current working directory. That's really useful and you might not use it as much as you should. The --cached option shows you just the differences that you've staged.
 This provides a way to preview your own patch, to make sure everything is in order. Crazy useful. See below for the example:
 ```
 git diff --cached
 ```
 
-#### 9. stash your changes and apply back
+<br>
+### 9. stash your changes and apply back
 "git stash" takes all of the staged changes and stores them away somewhere. This is useful if you need to stash your changes so you can be on a clean branch or maybe because you want to go back and try something before you make a commit with these changes. Here's how you do a stash:
 ```
 git stash
@@ -317,7 +331,8 @@ And to apply a specific stash from that list (e.g., stash@{3}):
 git stash apply stash@{3}
 ```
 
-#### 10. Print out a cool visualization of your log
+<br>
+### 10. Print out a cool visualization of your log
 This is pretty cool! To visualize all of your long-standing branches:
 ```
 git log --pretty=oneline --graph --decorate --all
@@ -327,6 +342,8 @@ We can return to a previous version by first copying ID from git log and then:
 git reset --hard ID
 ```
 
+<br>
+<br>
 ## Reference
 [Pro git book](https://git-scm.com/book/en/v2)
 There is an online book about git, authored by Scott Chacon and Ben Straub, which is, in my opinion, far better than the official git documentation. When I need to refresh or learn some git concept, I always go there by default.

@@ -86,10 +86,10 @@ git branch
 This command will list the version history for the current branch:
 ```
 git log
-
 # search in code
 git log -S "window.alert"
 ```
+
 <br>
 ### 3. Every-day workflow
 #### Git add

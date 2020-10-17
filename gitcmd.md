@@ -54,8 +54,6 @@ git remote -v
 If you haven't setup upstream. Now is the time:
 ```
 git remote add upstream https://github.com/<upstream_username>/<repo_name>.git
-```
-```
 git fetch upstream
 ```
 

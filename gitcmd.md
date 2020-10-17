@@ -58,7 +58,7 @@ git fetch upstream
 ```
 
 <br>
-#### 2. Working with branches
+### 2. Working with branches
 To create a new branch and switch to it at the same time, you can run the command with the -b switch:
 ```
 git checkout -b branch_name
@@ -68,7 +68,6 @@ This is short for:
 ```
 # create a new branch
 git branch branch_name
-
 # switch from one branch to another
 git checkout branch_name
 ```

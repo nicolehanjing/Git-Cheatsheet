@@ -1,0 +1,130 @@
+# Git-Cheatsheet
+
+- An overview of my day-to-day workflow with Git
+- Cool and helpful Git tricks
+
+* Git CheatSheet                                                      :Tools:
+:PROPERTIES:
+:type:     tool
+:export_file_name: cheatsheet-git-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/nicolehanjing" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/nicole-han-tech/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/nicolehanjing"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" alt="slack"/></a></div>
+<div style="float: left; padding: 5px"><a href="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white" alt="medium"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/nicolehan/cheatsheet-git-A4/blob/master/cheatsheet-git-A4.pdf][cheatsheet-git-A4.pdf]], Category: [[https://cheatsheet.nicolehan.com/category/tools/][tools]]
+- Blog URL: https://cheatsheet.nicolehan.com/cheatsheet-git-A4
+- Related posts: 
+
+File me [[https://github.com/nicolehan/cheatsheet-git-A4/issues][Issues]] or star [[https://github.com/nicolehan/cheatsheet-git-A4][this repo]].
+** Git Advanced
+| Name                                | Comment                                                                               |
+|-------------------------------------+---------------------------------------------------------------------------------------|
+| [[https://github.com/todotxt/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit][Git squash to make history clean]]    | =git rebase -i HEAD~4=; =git push origin <branch-name> --force=                       |
+| Find git branch by commit hash      | https://${git_repo_link}/commit/${commit_hash}, =git name-rev ${commit_hash}=         |
+| Define alias to the commands      | `git config — global alias.co checkout`, `git config — global alias.br branch`         |
+| Print a representation of the changes between branches      | `git log — graph — oneline`         |
+| List all remote git branches        | =git ls-remote --heads origin=                                                        |
+| Git clone repo with another ssh key | ssh-agent bash -c `ssh-add yourkey; git clone git@github.com:user/project.git`        |
+| Git clone to a specific folder      | =git clone https://github.com/google/cadvisor.git /go/src/github.com/google/cadvisor= |
+| [[https://docs.gitlab.com/ee/user/project/code_owners.html][Code Owners]]                         | Define individuals or teams that are responsible for code in a repository.            |
+
+** Git Release
+| Name                             | Comment                                                          |
+|----------------------------------+------------------------------------------------------------------|
+| Git create a new release          | [[https://docs.github.com/en/github/administering-a-repository/managing-releases-in-a-repository][Git draft a release]] |
+
+** Git Remote
+| Name                             | Comment                                                          |
+|----------------------------------+------------------------------------------------------------------|
+| Git add a remote source          | =git remote add upstream git@github.com:thoughtbot/dotfiles.git= |
+| [[https://stackoverflow.com/questions/10603671/how-to-add-a-local-repo-and-treat-it-as-a-remote-repo][Git add a local folder as remote]] | =git init .=, =git remote add bak /tmp/test_git_folder=          |
+
+** Git Commit
+| Name                             | Comment                                                                 |
+|----------------------------------+-------------------------------------------------------------------------|
+| [[https://github.com/todotxt/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit][Git squash to make history clean]] | =git rebase -i HEAD~4=; =git push origin <branch-name> --force=         |
+| Git amend                        | =git commit --amend --no-edit=                                          |
+| Git commit and squash            | =git commit --amend --no-edit=, =git push origin <branch-name> --force= |
+| Git add patch                    | =git add -p=                                                            |
+| Git commit                       | git commit -m 'XXX'                                                     |
+| Git add and commit               | git ci -m 'XXX'                                                         |
+
+[[https://cheatsheet.nicolehan.com/cheatsheet-git-A4][images/git-concept.png]]
+** Git Undo
+| Name            | Comment                   |
+|-----------------+---------------------------|
+| Undo git commit | =git reset --hard HEAD~1= |
+| Undo git pull   | =git reset --hard=        |
+| Undo git add    | =git reset filename.txt=  |
+| Undo git merge  | =git merge --abort=       |
+** Git log
+| Name                                             | Comment                                                     |
+|--------------------------------------------------+-------------------------------------------------------------|
+| git sh1sum                                       | =git log -1 --pretty=format:%h=                             |
+| Check recent commits                             | =git log -n 3=                                              |
+| Show change content between tow commits          | =git log --pretty=oneline --abbrev-commit 1234...5678=      |
+| Check commit by username                         | =git log origin/master -n 3 --author <denny>=               |
+| Check changes for a given file from a given user | =git log origin/master -n 3 --author <denny> <somefile.py>= |
+| Print a representation of the changes between branches      | `git log — graph — oneline`         |
+** Git Diff
+| Name                                  | Comment                                                                     |
+|---------------------------------------+-----------------------------------------------------------------------------|
+| Compare git diff after commit         | =git diff --cached=                                                         |
+| Compare two git tags                  | =git diff ${sha1sum}..${sha2sum}=                                           |
+| Show changed file list                | =git diff --name-status=, =git diff --name-status --cached=                 |
+| Git diff two revision                 | =git diff ${sha1sum}..${sha2sum}=                                           |
+| Git show file changes                 | =git diff --name-only ${sha1sum} ${sha2sum}=                                |
+| Show changeset of the latest commit   | =git diff HEAD^=                                                            |
+| Show prvious changeset for one file   | =git diff HEAD^ default.rb=                                                 |
+| Compare two branches in CLI           | =git diff <branch_1>..<branch_2>= Make sure you have those branches locally |
+| Compare two revision in GitHub UI     | [[https://www.nicolehan.com/github_wiki#sec-1-4][https://github.com/.../.../compare/sha1...sha2]]                              |
+| Compare latest 3 commits in GitHub UI | https://github.com/nicolehan/cheatsheet-git-a4/compare/HEAD~3...HEAD       |
+#+BEGIN_HTML
+<a href="https://cheatsheet.nicolehan.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/nicolehan/cheatsheet.nicolehan.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+** Git Config
+| Name                     | Comment                                                                                                             |
+|--------------------------+---------------------------------------------------------------------------------------------------------------------|
+| Show git config          | =git config --global/system=                                                                                        |
+| Configure default editor | =export pager=cat=, =git config --global core.editor nano=                                                          |
+| Edit git global config   | =git config --global --edit=                                                                                        |
+| Alias for git status     | =git config --global alias.st status= [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][Link: git aliases]]                                                             |
+| Alias for git checkout   | =git config --global alias.co checkout=                                                                             |
+| Alias for git commit     | =git config --global alias.ci commit=                                                                               |
+| Reset git url            | =git config --global url."git@github.com:nicolehan/myrepo.git:".insteadOf "https://github.com/nicolehan/myrepo/"= |
+| Reference                | [[https://github.com/github/gitignore][GitHub: gitignore examples]]                                                                                          |
+** Git Branch
+| Name                         | Comment                                  |
+|------------------------------+------------------------------------------|
+| List all remote git branches | =git ls-remote --heads origin=           |
+| Delete local branch          | =git branch -d <branch_name>=            |
+| Delete remote branch         | =git push origin --delete <branch_name>= |
+** Git Tag
+| Name                  | Comment                                          |
+|-----------------------+--------------------------------------------------|
+| Git list all tags     | =git ls-remote --tags=                           |
+| Git Fetch all tags    | =git fetch --tags; git checkout tags/<tag_name>= |
+| Git delete local tag  | =git tag -d <tag_name>=                          |
+| Git delete remote tag | =git push --delete origin <tag_name>=            |
+** Git Submodule
+| Name                           | Comment                            |
+|--------------------------------+------------------------------------|
+| Git add a repo to current repo | =git submodule add <git_repo_url>= |
+| Update submodule               | =git submodule update=             |
+** GitHub
+| Name            | Comment                                                       |
+|-----------------+---------------------------------------------------------------|
+| Github Shortcut | [[https://help.github.com/articles/using-keyboard-shortcuts][Link: Using keyboard shortcuts]]                                |
+| Generate TOC    | [[https://www.nicolehan.com/github_wiki#sec-1-2][gh-md-toc]]                                                     |
+| Reference       | [[https://www.nicolehan.com/github_wiki#sec-1-3][link: generate link for code block]], [[https://www.nicolehan.com/github_wiki#sec-1-1][link: git clone wiki repo]] |
